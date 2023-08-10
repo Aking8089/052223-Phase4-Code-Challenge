@@ -23,7 +23,15 @@ db.init_app(app)
 @app.route('/')
 def index():
     return '<h1>Code challenge</h1>'
+    
 
+# App test.py
+app_test.py
+importjson
+fromos importenviron
+fromflask importrequest
+fromapp importapp
+frommodels importdb, Restaurant, RestaurantPizza, Pizza
 
 if __name__ == '__main__':
     app.run(port=5555, debug=True)
