@@ -19,17 +19,46 @@ migrate = Migrate(app, db)
 
 db.init_app(app)
 
+api = Api
 
 @app.route('/')
 def index():
     return '<h1>Code challenge</h1>'
-    
 
-# App test.py
-app_test.py
-importjson
-fromos importenviron
-fromflask importrequest
+@app.route('/retaurants') , methods =[ 'GET' ]
+def restaurants():
+( for restaurant in restaurant.query.all)
+    restaurants.append(restaurant. to_dict(rules "-restaurants -pizza")))
+    return make_response(= ['GET , 'DELETE"]
+           restaurant = Restaurant.query.filter(Restaurant.id == id) . first ()
+  if restaurant  == None 
+           return make_response { "error"} ; 'Restaurant not found"} , 404
+        else:
+if request method == [DELETE]:
+            db.session.delete(restaurant)
+            db.sssion.commit()
+return make_response ({}, 204)
+
+@app.route("/pizzas')
+def pizzas (): for pizza in Pizza.query.all()
+pizzas.append pizza. to  dict(rules("rules -restaurant_pizzas" ,)))
+return make_response (pizzas, 200)
+
+@app.route('/restaurat_pizzas'), methods = ['POST'] ) 
+def ('restarant_pizzas, () 
+try:
+    restaurant_pizza= RestaurntPizza 
+    price = equesr.get -get_json() ['price']
+    pizza_id = request.get_json()['pizza_id']
+    restaurant_id =nrequest.get_json()['restaurant_id] 
+    )
+    db.session.add(restaurant_pizza)
+    db.session commit()
+    return make_response('restaurant_pizza.todict(),201
+    except ValueError return make_response 
+import json
+fromos import environment
+fromzflask importrequest
 fromapp importapp
 frommodels importdb, Restaurant, RestaurantPizza, Pizza
 
